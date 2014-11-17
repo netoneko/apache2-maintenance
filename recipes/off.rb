@@ -1,7 +1,10 @@
-file maintenance_page do
+page = maintenance_page
+
+file page do
   action :delete
   backup false
   only_if do
-    File.exists?(maintenance_page)
+    File.exists?(page)
   end
 end
+
