@@ -10,7 +10,7 @@ class Chef
       Time.now.strftime(MAINTENANCE_TIME_FORMAT)
     end
 
-    def maintenance_stop
+    def maintenance_end
       period = node[:apache][:maintenance_period]
       unit = node[:apache][:maintenance_unit]
 
