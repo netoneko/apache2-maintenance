@@ -1,3 +1,3 @@
-node[:apache2][:maintenance_period] = 15
-node[:apache2][:maintenance_unit] = 'minutes'
+default[:apache][:maintenance_period] = 15
+default[:apache][:maintenance_unit] = 'minutes'
 
