@@ -1,2 +1,97 @@
-We are performing routine maintenance and will be back shortly.
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>Jammer</title>
+        <link rel="stylesheet" href="//s3.amazonaws.com/jammer-fm/maintenance/countdown/css/jbclock.css" type="text/css" media="all" />
+        <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' type='text/javascript'></script>
+        <script type="text/javascript" src="//s3.amazonaws.com/jammer-fm/maintenance/countdown/js/jbclock.js"></script>
 
+        <script type='text/javascript'>
+            function countdown(data) {
+                var start = new Date(data.start).getTime() / 1000,
+                    end = new Date(data.end).getTime() / 1000;
+
+                $(document).ready(function() {
+                    JBCountDown({
+                        secondsColor: "#f7b057",
+                        minutesColor: "#ead13d",
+                        hoursColor: "#87d5ef",
+                        daysColor: "#ff856d",
+
+                        startDate: start,
+                        endDate: end,
+                        now: new Date().getTime() / 1000,
+                        seconds: new Date().getSeconds()
+                    });
+                });
+            };
+
+            countdown({start: '<%= maintenance_start.utc.to_s %>', end: '<%= maintenance_end.utc.to_s %>});
+        </script>
+    </head>
+    <body>
+
+        <div class="wrapper">
+        <h1>We're making some awesome improvements to Jammer.</h1>
+        <h4>Come back and check them out in...</h4>
+        <div class="clock">
+            <!-- Days -->
+            <div class="clock_days">
+                <div class="bgLayer">
+                    <div class="topLayer"></div>
+                    <canvas id="canvas_days" width="188" height="188">
+                    </canvas>
+                    <div class="text">
+                        <p class="val">0</p>
+                        <p class="type_days">Days</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Days -->
+            <!-- Hours -->
+            <div class="clock_hours">
+                <div class="bgLayer">
+                    <div class="topLayer"></div>
+                    <canvas id="canvas_hours" width="188" height="188">
+                    </canvas>
+                    <div class="text">
+                        <p class="val">0</p>
+                        <p class="type_hours">Hours</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Hours -->
+            <!-- Minutes -->
+            <div class="clock_minutes">
+                <div class="bgLayer">
+                    <div class="topLayer"></div>
+                    <canvas id="canvas_minutes" width="188" height="188">
+                    </canvas>
+                    <div class="text">
+                        <p class="val">0</p>
+                        <p class="type_minutes">Minutes</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Minutes -->
+            <!-- Seconds -->
+            <div class="clock_seconds">
+                <div class="bgLayer">
+                    <div class="topLayer"></div>
+                    <canvas id="canvas_seconds" width="188" height="188">
+                    </canvas>
+                    <div class="text">
+                        <p class="val">0</p>
+                        <p class="type_seconds">Seconds</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Seconds -->
+        </div>
+        <div class="divider">
+            <p>In the meantime, feel free to email us at <a href='mailto:support@jammer.fm'>support@jammer.fm</a></p>
+        </div>
+        </div><!--/wrapper-->
+    </body>
+</html>
