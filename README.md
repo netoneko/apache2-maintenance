@@ -1,6 +1,11 @@
 # apache2-maintenance
 
-Custom JSON example:
+## List of recipies
+
+* `apache2-maintenance::on`
+* `apache2-maintenance::off`
+
+## Custom JSON example:
 
 ```json
 {
