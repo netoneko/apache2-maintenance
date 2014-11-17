@@ -11,11 +11,10 @@
 {
   "apache": {
     "document_root": "/srv/www/jammer_ci",
-    "maintenance_period": 30,
-    "maintenance_unit": "minutes"
+    "maintenance_period": 30
   }
 }
 ```
 
-`maintenance_period` and `maintenance_unit` are optional.
+`maintenance_period` is optional and by default equals 15 (in minutes).
 

@@ -12,9 +12,8 @@ class Chef
 
     def maintenance_end
       period = node[:apache][:maintenance_period]
-      unit = node[:apache][:maintenance_unit]
 
-      period.send(unit).from_now.strftime(MAINTENANCE_TIME_FORMAT)
+      (Time.now + period * 60).strftime(MAINTENANCE_TIME_FORMAT)
     end
   end
 end
