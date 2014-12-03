@@ -1,3 +1,5 @@
+include_recipe 'opsworks_sidekiq::stop'
+
 template_vars = {maintenance_start: maintenance_start, maintenance_end: maintenance_end}
 
 template maintenance_page do
@@ -8,3 +10,4 @@ template maintenance_page do
 
   variables(template_vars)
 end
+
