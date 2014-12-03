@@ -5,4 +5,5 @@ license          'all_rights'
 description      'Installs/Configures apache2-maintenance'
 long_description 'Installs/Configures apache2-maintenance'
 version          '0.1.0'
+depends          'opsworks_sidekiq'
 
